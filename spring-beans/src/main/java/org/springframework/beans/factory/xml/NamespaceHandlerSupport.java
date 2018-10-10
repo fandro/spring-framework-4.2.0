@@ -26,6 +26,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 支持自定义配置项，需要实现NamespaceHandler接口，可以直接继承NamespaceHandlerSupport，
+ * <p>在自定义的NamespaceHandler类中首先注册节点解析类，节点解析类解析对应的节点<p/>
+ * <br/>参考 dubbo源码：
+ * <pre>
+ *  public void init() {
+ *         registerBeanDefinitionParser("application", new DubboBeanDefinitionParser(ApplicationConfig.class, true));
+ *         registerBeanDefinitionParser("module", new DubboBeanDefinitionParser(ModuleConfig.class, true));
+ *         registerBeanDefinitionParser("registry", new DubboBeanDefinitionParser(RegistryConfig.class, true));
+ *         registerBeanDefinitionParser("monitor", new DubboBeanDefinitionParser(MonitorConfig.class, true));
+ *         registerBeanDefinitionParser("provider", new DubboBeanDefinitionParser(ProviderConfig.class, true));
+ *         registerBeanDefinitionParser("consumer", new DubboBeanDefinitionParser(ConsumerConfig.class, true));
+ *         registerBeanDefinitionParser("protocol", new DubboBeanDefinitionParser(ProtocolConfig.class, true));
+ *         registerBeanDefinitionParser("service", new DubboBeanDefinitionParser(ServiceBean.class, true));
+ *         registerBeanDefinitionParser("reference", new DubboBeanDefinitionParser(ReferenceBean.class, false));
+ *         registerBeanDefinitionParser("annotation", new AnnotationBeanDefinitionParser());
+ *     }
+ * </pre>
+ *
+ *
+ *
  * Support class for implementing custom {@link NamespaceHandler NamespaceHandlers}.
  * Parsing and decorating of individual {@link Node Nodes} is done via {@link BeanDefinitionParser}
  * and {@link BeanDefinitionDecorator} strategy interfaces, respectively.
