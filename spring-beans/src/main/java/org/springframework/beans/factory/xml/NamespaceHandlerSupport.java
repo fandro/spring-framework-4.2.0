@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 支持自定义配置项，需要实现NamespaceHandler接口，可以直接继承NamespaceHandlerSupport，
+ * 支持自定义配置，需要实现NamespaceHandler接口，可以直接继承NamespaceHandlerSupport，
  * <p>在自定义的NamespaceHandler类中首先注册节点解析类，节点解析类解析对应的节点<p/>
  * <br/>参考 dubbo源码：
  * <pre>
